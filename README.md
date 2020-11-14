@@ -36,7 +36,7 @@
 
 - **软件获取**
 
-  - 【方案一】：[下载安装向导 (约17MB)](https://t.qinse.top/subscribe/installer.exe)；
+  - 【方案一】：[下载安装向导 (约17MB)](https://t.qinse.top/subscribe/installer.zip)；
 
   - 【方案二】：Clone项目；
 
