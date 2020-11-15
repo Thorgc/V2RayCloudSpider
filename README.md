@@ -17,39 +17,38 @@
 
 ## :loudspeaker: 更新日志
 
-- **2020.11.20 /preview**
+- #### **2020.11.20** /preview/
 
-  > > **Function Iteration**
+  > **Function Iteration**
 
   1. Overload the `TrojanCollectionModule(TCM)`
   2. Expand the work queue to `150pieces/day`
 
-  > > **Performance Tuning**
+  > **Performance Tuning**
 
   1. Introduce the  `Type-SuperClass Elastic Scaling Solution(T-SC ESS)`
   2. Introduce the `Goroutine-APSchedule Mode(G-APSM)`
 
-- **2020.11.15 /release**
+- #### **2020.11.15**
 
-  > > **Major Update**
+  > **Major Update**
 
   1. Remove the source code temporarily 
 
-- **2020.10.20 /release** 
+- #### **2020.10.20 v_4.5.2** 
 
-  > > **Major Update**
+  > **Major Update**
 
   1. These types of subscription links（ `Trojan`、`v2ray`、`ssr` ）are supported by multi-threaded federated collections
   2. The document tree has been rewritten, and the old version of the software cannot run normally
      -  :old_key: Update the `v2raycs Client` to the latest version
   3. Add auto update function
 
-  > > **Function Iteration** 
+  > **Function Iteration** 
 
   1. Using `Redis ` to take over the access business to improve distribution efficiency.
   2. Open get interface. Please refer to the manual for usage
-  3. `SleepTime` increased to `30s/次`
-  4. ~~添加一键部署脚本，用户可在`CentOS7`环境下快速建立采集环境（可改动源码以适配不同环境的需求）~~
+  3. `SleepTime` increased to `30s/e`
 
 ## :eagle: 快速上手
 
