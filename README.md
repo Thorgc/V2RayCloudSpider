@@ -21,42 +21,42 @@
 
   > **Function Iteration**
 
-  1. Overload the `TrojanCollectionModule(TCM)`
-  2. Expand the work queue to `150pieces/day`
+  1. Overload the `TrojanCollectionModule(TCM).`
+  2. Expand the work queue to `150pieces/day.`
 
   > **Performance Tuning**
 
-  1. Introduce the  `Type-SuperClass Elastic Scaling Solution(T-SC ESS)`
-  2. Introduce the `Goroutine-APSchedule Mode(G-APSM)`
+  1. Introduce the  `Type-SuperClass Elastic Scaling Solution(T-SC ESS).`
+  2. Introduce the `Goroutine-APSchedule Mode(G-APSM).`
 
 - #### **2020.11.15**
 
   > **Major Update**
 
-  1. Remove the source code temporarily 
+  1. Remove the source code temporarily .
 
 - #### **2020.10.20 v_4.5.2** 
 
   > **Major Update**
 
-  1. These types of subscription links（ `Trojan`、`v2ray`、`ssr` ）are supported by multi-threaded federated collections
-  2. The document tree has been rewritten, and the old version of the software cannot run normally
-     -  :old_key: Update the `v2raycs Client` to the latest version
-  3. Add auto update function
+  1. These types of subscription links（ `Trojan`、`v2ray`、`ssr` ）are supported by multi-threaded federated collections.
+  2. The document tree has been rewritten, and the old version of the software cannot run normally.
+     -  :old_key: Update the `v2raycs Client` to the latest version.
+  3. Add auto update function.
 
   > **Function Iteration** 
 
   1. Using `Redis ` to take over the access business to improve distribution efficiency.
-  2. Open get interface. Please refer to the manual for usage
-  3. `SleepTime` increased to `30s/e`
+  2. Open get interface. Please refer to the manual for usage.
+  3. `SleepTime` increased to `30s/e.`
 
 ## :eagle: 快速上手
 
 - **软件获取**
 
-  - 【方案一】：[下载安装向导 (约17MB)](https://t.qinse.top/subscribe/installer.zip)；
+  - 【方案一】：[**Windows10 64x <约17Mb>**](https://t.qinse.top/subscribe/v2ray云彩姬.zip) **||** [备用下载地址](https://yao.qinse.top/subscribe/v2ray云彩姬.zip)
 
-  - 【方案二】：Clone项目；
+  - 【方案二】：Clone项目
 
   ![Snipaste_2020-10-22_13-53-00](https://i.loli.net/2020/10/22/s9vC6RI7FtVJahe.png)
 
@@ -94,38 +94,29 @@
 
   ```powershell
   # 预览运行效果;如下为默认路径
-  python3 /qinse/V2RaycSpider0925/funcBase/deploy_engine.py
+  python3 /qinse/V2RaycSpider1025/funcBase/deploy_engine.py
   ```
   
   ```python
   # 部署
-  nohup python3 /qinse/V2RaycSpider0925/funcBase/deploy_engine.py &
+  nohup python3 /qinse/V2RaycSpider1025/funcBase/deploy_engine.py &
   ```
   
   ```python
   # /V2RaycSpider0925/config.py
-  # SYS_PATH = f'/qinse/V2RaycSpider{verNum}'
+  # CONFIG_PATH = f'/qinse/V2RaycSpider{verNum}/config.py'
   
-  # ---------------------------------------
-  # Cloud server configuration(SSH)
-  # ---------------------------------------
-  ECS_HOSTNAME: str = 'your ip'
-  ECS_PORT: int = 29710
-  ECS_USERNAME: str = ''
-  ECS_PASSWORD: str = ''
-      
-  # ---------------------------------------
+  # ------------------------------------
   # Redis server configuration(SSH)
-  # ---------------------------------------
-  
+  # ------------------------------------
   REDIS_HOST: str = 'your ip'
   REDIS_PORT: int = 6379
   REDIS_PASSWORD: str = ''
   ```
-
+  
 - **设置驱动执行权限**
 
-  给`chromedriver`设置可执行权限，如果用`Finalshell`l或`Xshell`的同学，直接右键目标文件即可设置文件权限；项目预装的驱动是最新版本的[2020.10]所以`Linux`中要下载`v85.0.4183.102`或更新版本的Chrome
+  给`chromedriver`设置可执行权限，如果用`Finalshell`l或`Xshell`的同学，直接右键目标文件即可设置文件**执行权限**；项目预装的驱动是最新版本的[2020.10]所以`Linux`中要下载`v85.0.4183.102`或更新版本的Chrome
 
   ```python
   CHROMEDRIVER_PATH = os.path.dirname(__file__) + '/MiddleKey/chromedriver'
