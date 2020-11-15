@@ -17,7 +17,7 @@
 
 ## :loudspeaker: 更新日志
 
-- ### **2020.11.20** /preview/
+- #### **2020.11.20** v_4.5.3-preview
 
   > **Function Iteration**
 
@@ -29,13 +29,13 @@
   1. Introduce the  `Type-SuperClass Elastic Scaling Solution(T-SC ESS).`
   2. Introduce the `Goroutine-APSchedule Mode(G-APSM).`
 
-- ### **2020.11.15**
+- #### **2020.11.15** v_4.5.3-beta
 
   > **Major Update**
 
   1. Remove the source code temporarily .
 
-- ### **2020.10.20 v_4.5.2** 
+- #### **2020.10.20 v_4.5.2** 
 
   > **Major Update**
 
