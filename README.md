@@ -8,29 +8,48 @@
 > 2. 本项目通用版本使用集群定时采集方案；
 > 3. 本项目软件及源码禁止在国内大陆网络环境大范围传播，项目转载请注明出处；
 > 4. 本项目开源免费，请不要滥用接口；
-> 5. 禁止任何人使用本项目及其分支提供任何形式的收费服务；
+> 5. 禁止任何人使用本项目及其分支提供任何形式的收费服务。
 
 - 针对全球范围内基于[STAFF原生架构](https://github.com/Anankke/SSPanel-Uim)产出的机场进行垂直挖掘；
-- 从`Youtube`等平台获取机场链接及打击目标；
-- 采集免费优质的订阅链接，综合会员时长、可用流量、节点质量等管理条件进行优先排序；
-- 虽然软件名叫`V2Ray云彩姬`但理论上支持所有形式订阅链接的采集
+- 从`Youtube`、`SONA-TechnologyForum` 等平台获取`RegisteUrl & HitTarget`；
+- 综合`LifeCycle`、`RemainingFlow `、`NodeQuality`等参数进行联合采集；
+- 虽然软件名叫`V2Ray云彩姬`但理论上支持所有形式订阅链接的采集。
 
 ## :loudspeaker: 更新日志
 
-- **2020.10.20**
+- **2020.11.20 /preview** ​​
 
-  > > <重要更新>
+  > > <Function Iteration>
 
-  1. 支持Troajn、V2ray、SSR订阅链接多线程联合采集；
-  2. 文档树调整，旧版本软件无法正常运行，请将客户端更新至最新版本;
-  3. 支持软件自动更新。
+  1. Overload the `TrojanCollectionModule(TCM)`；
+  2. Expand the work queue to `150pieces/day`；
 
-  > > <功能迭代>
+  > > <Performance Tuning>
 
-  1. 使用Redis接管存取业务，提高分发效率；
-  2. 开放get接口，快速获取订阅链接；
-  3. 自闭时间提升至30s/次；
-  4. 添加一键部署脚本，用户可在CentOS7环境下快速建立采集环境（可改动源码以适配不同环境的需求）；
+  1. Introduce the  `Type-SuperClass Elastic Scaling Solution(T-SC ESS)`；
+  2. Introduce the `Goroutine-APSchedule Mode(G-APSM)`；
+
+- **2020.11.15 /release **
+
+  > > <Major Update>
+
+  1. Remove the source code temporarily ;
+
+- **2020.10.20 /release** 
+
+  > > <Major Update>
+
+  1. These types of subscription links（ `Trojan`、`v2ray`、`ssr` ）are supported by multi-threaded federated collections;
+  2. The document tree has been rewritten, and the old version of the software cannot run normally;
+     -  :old_key: Update the `v2raycs Client` to the latest version;
+  3. Add auto update function;
+
+  > > <Function Iteration> 
+
+  1. Using `Redis ` to take over the access business to improve distribution efficiency.
+  2. Open get interface. Please refer to the manual for usage.
+  3. `SleepTime` increased to `30s/次`.
+  4. ~~添加一键部署脚本，用户可在`CentOS7`环境下快速建立采集环境（可改动源码以适配不同环境的需求）；~~
 
 ## :eagle: 快速上手
 
@@ -50,13 +69,13 @@
 
 ## :video_game: 进阶玩法
 
-> 该脚本未在macOS测试运行，可能存在非常多的bug，欢迎感兴趣的小伙伴来跑一下程序- -
+> `Tos`：该项目基于`Windows10`环境开发，Mac用户~~可能~~无法正常使用
 
-- `/V2RaySpider0925`中存放该项目通用版本的源代码
+- `/V2RaySpider1025`中存放该项目通用版本的源代码
 
 - 运行`main.py`启动程序
 
-- 安装依赖`当前目录：/V2RaycSpider0925`
+- 安装依赖`当前目录：/V2RaycSpider1025`
 
   ```
   pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/
@@ -176,15 +195,13 @@
 
 ## :world_map: 开源计划
 
-- [x] 支持Trojan-go、Trojan-gfw机场的采集
-- [ ] 融合网络代理核心，形成自洽的科学上网模块
-- [x] 合并订阅链接消息队列，PC端可查看目前在库最多25条Subscribe订阅链接，并择一获取
+- [x] 支持`Trojan-go`、`Trojan-gfw`机场的采集
+- [ ] 融合网络代理核心，形成自洽的科学上网方案
+- [x] 合并订阅链接消息队列，PC端可查看目前在库的`Subscribe Link`并择一获取
   - [x] 合并队列
   - [x] 查看链接
   - [x] 择一获取
-- [ ] 逐渐停用easyGUI前端模块，兼容跨平台访问(手机，电脑，嵌入式系统)
-
-
+- [ ] 逐渐停用`easygui`前端模块，开发跨平台视图交互模块
 
 ## :email: 联系我们
 
