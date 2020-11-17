@@ -14,7 +14,7 @@
 - 从`Youtube`、`SONA-TechnologyForum` 等平台获取`RegisteUrl & HitTarget`；
 - 综合`LifeCycle`、`RemainingFlow `、`NodeQuality`等参数进行联合采集；
 - 虽然软件名叫`V2Ray云彩姬`但理论上支持所有形式订阅链接的采集；
-- 更多项目细节请访问[李芬特小窝Blog](https://www.qinse.top/blog/) :smirk:
+- 更多项目细节请访问[李芬特小窝Blog](https://www.qinse.top/v2raycs/) :smirk:
 
 ## :loudspeaker: 更新日志
 
