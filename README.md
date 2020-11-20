@@ -18,19 +18,26 @@
 
 ## :loudspeaker: 更新日志
 
-- #### **2020.11.20** v_4.5.3-preview
+- #### **2020.11.21** v_4.5.3-beta
+
+  > **Major Update**
+
+  1. Further optimize the project engineering structure.
+  2. Further optimize the program logic to reduce the difficulty of project deployment.
+  3. Modify user permissions.
 
   > **Function Iteration**
 
-  1. Overload the `TrojanCollectionModule(TCM).`
-  2. Expand the work queue to `150pieces/day.`
+  1. Overload the `TrojanCollectionModule(TCM)`.
+  2. Expand the work queue to `150pieces/day`.
+  3. Program the `ACM-CentralEngine` to counter the anti-crawler mechanism.
 
   > **Performance Tuning**
 
-  1. Introduce the  `Type-SuperClass Elastic Scaling Solution(T-SC ESS).`
-  2. Introduce the `Goroutine-APSchedule Mode(G-APSM).`
+  1. Introduce the  `Type-SuperClass Elastic Scaling Solution(T-SC ESS)`.
+  2. Introduce the `Goroutine-APSchedule Mode(G-APSM)`.
 
-- #### **2020.11.15** v_4.5.3-beta
+- #### **2020.11.15** v_4.5.3-preview
 
   > **Major Update**
 
@@ -47,9 +54,9 @@
 
   > **Function Iteration** 
 
-  1. Using `Redis ` to take over the access business to improve distribution efficiency.
+  1. Using `Redis` to take over the access business to improve distribution efficiency.
   2. Open get interface. Please refer to the manual for usage.
-  3. `SleepTime` increased to `30s/e.`
+  3. `ConfinementTime` increased to `30s/e`.
 
 ## :eagle: 快速上手
 
@@ -63,8 +70,7 @@
 
 - **软件使用**
 
-  - 运行`V2Ray云彩姬.exe` 即可启动**v2ray云彩姬**获取订阅连接；
-  - [云彩姬使用说明](https://github.com/QIN2DIM/V2RayCloudSpider/blob/master/V2Ray云彩姬使用说明.md)
+  运行`V2Ray云彩姬.exe` 即可启动[**v2ray云彩姬**](https://github.com/QIN2DIM/V2RayCloudSpider/blob/master/V2Ray云彩姬使用说明.md)获取订阅连接。
 
 
 ## :video_game: 进阶玩法
@@ -153,36 +159,33 @@
 
 ### :zap: 其他设置
 
-- 快速获取
+​		使用`GET`请求，分别访问以下接口，使用text即可获取`SubscribeLink`（该资源来自`Redis`数据缓存交换口，作者会在未来版本将此接口拓展为基于垂直网络的数据挖掘模块并暴露更多的API接口）。
 
-  - 使用requests的get请求，分别访问以下链接，使用text抽取订阅链接
+```python
+# Python3.8
+# quick——get Subscribe API
+import requests
 
-    ```python
-    # Python3.8
-    # quick——get Subscribe API
-    import requests
-    
-    subs_target = 'https://t.qinse.top/subscribe/{}.txt'
-    
-    subs_ssr = requests.get(subs_target.format('ssr')).text
-    subs_trojan = requests.get(subs_target.format('trojan')).text
-    subs_v2ray = requests.get(subs_target.format('v2ray')).text
-    
-    print("subs_ssr: {}\nsubs_: {}\nsubs_v2ray: {}\n".format(subs_ssr,subs_trojan,subs_v2ray))
-    
-    ```
+subs_target = 'https://t.qinse.top/subscribe/{}.txt'
 
-    ![image-20201020112752998](https://i.loli.net/2020/10/20/XaJc4qA1ehPUM5V.png)
+subs_ssr = requests.get(subs_target.format('ssr')).text
+subs_trojan = requests.get(subs_target.format('trojan')).text
+subs_v2ray = requests.get(subs_target.format('v2ray')).text
+
+print("subs_ssr: {}\nsubs_: {}\nsubs_v2ray: {}\n".format(subs_ssr,subs_trojan,subs_v2ray))
+```
+
+![image-20201020112752998](https://i.loli.net/2020/10/20/XaJc4qA1ehPUM5V.png)
 
 ##  :small_red_triangle: 注意事项
 
 - **防火墙警告**
 
-  - 首次运行可能会弹出提示
+  ​	首次运行可能会弹出提示
 
-    ![3](https://i.loli.net/2020/10/06/MhwiZfOz3VdDPU5.png)
+  ![3](https://i.loli.net/2020/10/06/MhwiZfOz3VdDPU5.png)
 
-    ![3](https://i.loli.net/2020/10/06/gmLksO3HCtyWu9r.png)
+  ![3](https://i.loli.net/2020/10/06/gmLksO3HCtyWu9r.png)
 
 ## :world_map: 开源计划
 
