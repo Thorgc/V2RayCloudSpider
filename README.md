@@ -18,7 +18,7 @@
 
 ## :loudspeaker: 更新日志
 
-- #### **2020.11.24 v_4.5.3-beta
+- #### 2020.11.24 v_1.0.2.11162350.11.beta
 
   > **Major Update**
 
@@ -85,49 +85,38 @@
 
 ### :balance_scale: 参数设置
 
-- 请在此正确填写你的服务器信息，并将整个项目文件`V2RaycSpider0925`上传至linux服务器的`/qinse`文件夹
+- 请在`config.py`根据提示正确填写配置信息，并将整个项目文件`V2RaycSpider版本号`上传至服务器的`/qinse`文件夹
 
-- 服务器首次运行请确保已安装`redis`并正确配置（开放）访问权限，且安装项目Python第三方库
+- 请确保服务器本项目前已安装`redis`并配置`Python3`开发环境
 
-- 运行`./funcBase/deploy_engine.py`则可部署脚本。
+- 请确保服务器安装`google-chrome`，并配置了对应版本的`ChromeDriver`
 
-- **一定确保宁的环境部署在非大陆VPS上否则大概率翻车**
+    - 设置驱动执行权限
 
-  ```powershell
-  # 预览运行效果;如下为默认路径
-  python3 /qinse/V2RaycSpider1025/funcBase/deploy_engine.py
-  ```
-  
-  ```python
-  # 部署
-  nohup python3 /qinse/V2RaycSpider1025/funcBase/deploy_engine.py &
-  ```
-  
-  ```python
-  # /V2RaycSpider0925/config.py
-  # CONFIG_PATH = f'/qinse/V2RaycSpider{verNum}/config.py'
-  
-  # ------------------------------------
-  # Redis server configuration(SSH)
-  # ------------------------------------
-  REDIS_HOST: str = 'your ip'
-  REDIS_PORT: int = 6379
-  REDIS_PASSWORD: str = ''
-  ```
-  
-- **设置驱动执行权限**
+        给`chromedriver`设置可执行权限，如果您正在使用`Finalshell`l或`Xshell`等远程桌面登录方案，直接<kbd>右键</kbd>目标文件 -> `文件权限`即可给予文件**执行权限**；项目预装的`ChromeDriver`对应的`Chrome`版本为`v85.0.4183.102`若版本不同，请根据`config.py`中的提示替换目录中的对应文件，并根据上文所示操作基于驱动执行权限。
 
-  给`chromedriver`设置可执行权限，如果您正在使用`Finalshell`l或`Xshell`等远程桌面登录方案，直接右键目标文件即可给予文件**执行权限**；项目预装的驱动是最新版本的[2020.10]所以`Linux`中要下载`v85.0.4183.102`或更新版本的Chrome
+        ```python
+        #Windows运行环境的驱动文件路径
+        if 'win' in platform:
+            CHROMEDRIVER_PATH = dirname(__file__) + '/BusinessCentralLayer/chromedriver.exe'
+        #其他（Linux）运行环境的驱动文件路径
+        else:
+            CHROMEDRIVER_PATH = dirname(__file__) + '/BusinessCentralLayer/chromedriver'
+        ```
 
-  ```shell
-  CHROMEDRIVER_PATH = os.path.dirname(__file__) + '/MiddleKey/chromedriver'
-  ```
+- 运行`./main.py`即可跑动项目，详细操作流程请看`main.py`源码
 
-- [安装其他依赖](https://shimo.im/docs/5bqnroJYDbU4rGqy/)
+    ```shell
+    # 部署
+    nohup python3 /qinse/V2RaycSpider1125/main.py deploy &
+    ```
+
+- 以上设置均在`main.py`以及`config.py`文件中有详细的设定说明，若有疑惑及报错请自行检索 或查看[v2ray云彩姬依赖拉取文档](https://shimo.im/docs/5bqnroJYDbU4rGqy/)（撰写中...）也可在issue中留言或者私信作者都可~方法总比困难多。
 
 ### :zap: 其他设置
 
-​		使用`GET`请求，分别访问以下接口，使用text即可获取`SubscribeLink`（该资源来自`Redis`数据缓存交换口，作者会在未来版本将此接口拓展为基于垂直网络的数据挖掘模块并暴露更多的API接口）。
+- 使用`GET`请求，访问以下接口，既可获取`CrawlerSeq subscribe_link`（该资源来自`Redis`数据交换的分发缓存接口，作者会在未来版本将此类玩法拓展为基于垂直网络的数据挖掘模块并暴露更多的`API`）。
+- 注：使用该方法获取的链接并不一定可用
 
 ```python
 # Python3.8
@@ -163,6 +152,9 @@ print("subs_ssr: {}\nsubs_: {}\nsubs_v2ray: {}\n".format(subs_ssr,subs_trojan,su
   - [x] 查看链接
   - [x] 择一获取
 - [ ] 逐渐停用`easygui`前端模块，开发跨平台视图交互模块
+- [ ] 引入`呼吸节拍`中间件，让任务行为拟人化
+- [ ] 兼容所有类型链接的贯通采集
+- [ ] 前后端分离，拓展Flask包装中间件
 
 ## :email: 联系我们
 
