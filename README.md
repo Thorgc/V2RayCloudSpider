@@ -4,9 +4,7 @@
 
 ## :carousel_horse: 项目简介
 
-> 1. 本项目架构去层级，用户可直接通过视图交互访问数据库；
-> 2. 本项目通用版本使用集群定时采集方案；
-> 3. 本项目软件及源码禁止在国内大陆网络环境大范围传播，项目转载请注明出处；
+> 3. 本项目软件及源码禁止在国内网络环境大范围传播，项目转载请注明出处；
 > 4. 本项目开源免费，请不要滥用接口；
 > 5. 禁止任何人使用本项目及其分支提供任何形式的收费服务。
 
@@ -123,39 +121,13 @@
   
 - **设置驱动执行权限**
 
-  给`chromedriver`设置可执行权限，如果用`Finalshell`l或`Xshell`的同学，直接右键目标文件即可设置文件**执行权限**；项目预装的驱动是最新版本的[2020.10]所以`Linux`中要下载`v85.0.4183.102`或更新版本的Chrome
+  给`chromedriver`设置可执行权限，如果您正在使用`Finalshell`l或`Xshell`等远程桌面登录方案，直接右键目标文件即可给予文件**执行权限**；项目预装的驱动是最新版本的[2020.10]所以`Linux`中要下载`v85.0.4183.102`或更新版本的Chrome
 
-  ```python
+  ```shell
   CHROMEDRIVER_PATH = os.path.dirname(__file__) + '/MiddleKey/chromedriver'
   ```
 
-- 安装`gcc`
-
-  ```
-  yum install gcc-c++
-  ```
-
-- `Linux`**安装Chrome**
-
-  - 指定yum源
-
-  ```powershell
-  wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
-  ```
-
-  - 安装
-
-  ```powershell
-  curl https://intoli.com/install-google-chrome.sh | bash
-  ```
-
-  - 安装后执行
-
-  ```powershell
-  google-chrome-stable --no-sandbox --headless --disable-gpu --screenshot https://www.baidu.com/
-  ```
-
-- [安装](https://shimo.im/docs/5bqnroJYDbU4rGqy/)`redis`
+- [安装其他依赖](https://shimo.im/docs/5bqnroJYDbU4rGqy/)
 
 ### :zap: 其他设置
 
@@ -190,7 +162,6 @@ print("subs_ssr: {}\nsubs_: {}\nsubs_v2ray: {}\n".format(subs_ssr,subs_trojan,su
 ## :world_map: 开源计划
 
 - [x] 支持`Trojan-go`、`Trojan-gfw`机场的采集
-- [ ] 融合网络代理核心，形成自洽的科学上网方案
 - [x] 合并订阅链接消息队列，PC端可查看目前在库的`Subscribe Link`并择一获取
   - [x] 合并队列
   - [x] 查看链接
