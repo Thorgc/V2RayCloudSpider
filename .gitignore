@@ -128,3 +128,6 @@ dmypy.json
 # Pyre type checker
 *.xml
 *.iml
+
+/V2RaycSpider1125/tests/
+/V2RaycSpider1125/README.md
