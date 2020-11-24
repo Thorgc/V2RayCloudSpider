@@ -37,12 +37,6 @@
   1. Introduce the  `Type-SuperClass Elastic Scaling Solution(T-SC ESS)`.
   2. Introduce the `Goroutine-APSchedule Mode(G-APSM)`.
 
-- #### **2020.11.15** v_4.5.3-preview
-
-  > **Major Update**
-
-  1. Remove the source code temporarily .
-
 - #### **2020.10.20 v_4.5.2** 
 
   > **Major Update**
