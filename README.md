@@ -13,7 +13,7 @@
 - 针对全球范围内基于[STAFF原生架构](https://github.com/Anankke/SSPanel-Uim)产出的机场进行垂直挖掘；
 - 从`Youtube`、`SONA-TechnologyForum` 等平台获取`RegisteUrl & HitTarget`；
 - 综合`LifeCycle`、`RemainingFlow `、`NodeQuality`等参数进行联合采集；
-- 虽然软件名叫`V2Ray云彩姬`但理论上支持所有形式订阅链接的采集；
+- 理论上支持所有类型订阅的采集；
 - 更多项目细节请访问[李芬特小窝Blog](https://www.qinse.top/v2raycs/) :smirk:
 
 ## :loudspeaker: 更新日志
@@ -54,64 +54,79 @@
 
 ## :eagle: 快速上手
 
-- **软件获取**
+- **【方案一】用户**
 
-  - 【方案一】：[**Windows10 64x <约17Mb>**](https://t.qinse.top/subscribe/v2ray云彩姬.zip) **||** [备用下载地址](https://yao.qinse.top/subscribe/v2ray云彩姬.zip)
+    - 软件获取：[**Windows10 64x <约17Mb>**](https://t.qinse.top/subscribe/v2ray云彩姬.zip) **||** [备用下载地址](https://yao.qinse.top/subscribe/v2ray云彩姬.zip)
 
-  - 【方案二】：Clone项目
+    - 软件使用：运行`V2Ray云彩姬.exe` 既可启动本体
 
-  ![Snipaste_2020-10-22_13-53-00](https://i.loli.net/2020/10/22/s9vC6RI7FtVJahe.png)
+         [V2Ray云彩姬使用说明](https://github.com/QIN2DIM/V2RayCloudSpider/blob/master/V2Ray云彩姬使用说明.md)
 
-- **软件使用**
+- **【方案二】开发者**
 
-  运行`V2Ray云彩姬.exe` 即可启动[**v2ray云彩姬**](https://github.com/QIN2DIM/V2RayCloudSpider/blob/master/V2Ray云彩姬使用说明.md)获取订阅连接。
+    - 下载源码
+
+![Snipaste_2020-11-25_12-19-45](https://i.loli.net/2020/11/25/P9Kyr1ZEG43obnD.png)
+
+- 根据提示信息合理配置`config.py`后运行`main.py` 既可部署项目
 
 
 ## :video_game: 进阶玩法
 
-> `Tos`：该项目基于`Windows10`环境开发，Mac用户~~可能~~无法正常使用
+> `Tos`：该项目基于`Windows10`环境开发，`Mac`用户~~可能~~无法正常使用
+>
+> `Help`： [环境配置说明](https://shimo.im/docs/5bqnroJYDbU4rGqy/)
 
-- `/V2RaySpider1025`中存放该项目通用版本的源代码
+1. **打开冰箱门**
+    - 请将`V2RaycSpider+版本号`的源码文件上传至服务器的`/qinse`文件夹（若没有就新建一个或者改动源码）
+    - 请确保部署环境已安装`redis`并开放远程访问权限
+    - 请确保部署环境已配置`Python3`开发环境且已安装第三方包
 
-- 运行`main.py`启动程序
+```powershell
+# 拉取第三方包
+pip install -r /qinse/V2RaycSpider1125/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/
+```
 
-- 安装依赖`当前目录：/V2RaycSpider1025`
+2. **将李芬特装入冰箱**
+    - 全局配置文件：[ **config.py**]([V2RayCloudSpider/config.py at master · QIN2DIM/V2RayCloudSpider (github.com)](https://github.com/QIN2DIM/V2RayCloudSpider/blob/master/V2RaycSpider1125/config.py))
 
-  ```
-  pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/
-  ```
-
-- 修改配置` config.py`
+3. **关闭冰箱门**
+    - 程序全局接口：[**main.py**]([V2RayCloudSpider/main.py at master · QIN2DIM/V2RayCloudSpider (github.com)](https://github.com/QIN2DIM/V2RayCloudSpider/blob/master/V2RaycSpider1125/main.py))
 
 ### :balance_scale: 参数设置
 
-- 请在`config.py`根据提示正确填写配置信息，并将整个项目文件`V2RaycSpider版本号`上传至服务器的`/qinse`文件夹
+1. **`ChromeDriver`** 
 
-- 请确保服务器本项目前已安装`redis`并配置`Python3`开发环境
+    请确保服务器安装`google-chrome`，并配置了对应版本的`ChromeDriver`并设置`文件权限 -> [ √ ]执行`
 
-- 请确保服务器安装`google-chrome`，并配置了对应版本的`ChromeDriver`
+    - 若您正在使用`Finalshell`l或`Xshell`等服务器远程登录方案， <kbd>右键</kbd>目标文件 -><kbd>点击</kbd>`文件权限`即可给予**执行权限**
+    - 项目预装的`ChromeDriver`对应的`Chrome`版本号为`v85.0.4183.102`。若版本不同，请根据`config.py`中的提示替换目录中的对应文件
 
-    - 设置驱动执行权限
+```python
+# Windows Chromedriver文件路径
+if 'win' in platform:
+    CHROMEDRIVER_PATH = dirname(__file__) + '/BusinessCentralLayer/chromedriver.exe'
+# Linux Chromedriver文件路径
+else:
+    CHROMEDRIVER_PATH = dirname(__file__) + '/BusinessCentralLayer/chromedriver'
+```
 
-        给`chromedriver`设置可执行权限，如果您正在使用`Finalshell`l或`Xshell`等远程桌面登录方案，直接<kbd>右键</kbd>目标文件 -> `文件权限`即可给予文件**执行权限**；项目预装的`ChromeDriver`对应的`Chrome`版本为`v85.0.4183.102`若版本不同，请根据`config.py`中的提示替换目录中的对应文件，并根据上文所示操作基于驱动执行权限。
+2. **`AppRun`**
 
-        ```python
-        #Windows运行环境的驱动文件路径
-        if 'win' in platform:
-            CHROMEDRIVER_PATH = dirname(__file__) + '/BusinessCentralLayer/chromedriver.exe'
-        #其他（Linux）运行环境的驱动文件路径
-        else:
-            CHROMEDRIVER_PATH = dirname(__file__) + '/BusinessCentralLayer/chromedriver'
-        ```
+    - 运行`main.py`既可启动项目，详细操作说明请看`main.py`源码
 
-- 运行`./main.py`即可跑动项目，详细操作流程请看`main.py`源码
+    - 服务器后台运行
 
-    ```shell
-    # 部署
-    nohup python3 /qinse/V2RaycSpider1125/main.py deploy &
-    ```
+        推荐搭配`tmux`使用，详细教程见[阮一峰网络日志]([Tmux 使用教程 - 阮一峰的网络日志 (ruanyifeng.com)](http://www.ruanyifeng.com/blog/2019/10/tmux.html))
 
-- 以上设置均在`main.py`以及`config.py`文件中有详细的设定说明，若有疑惑及报错请自行检索 或查看[v2ray云彩姬依赖拉取文档](https://shimo.im/docs/5bqnroJYDbU4rGqy/)（撰写中...）也可在issue中留言或者私信作者都可~方法总比困难多。
+```powershell
+# CentOS7 部署
+nohup python3 /qinse/V2RaycSpider1125/main.py deploy &
+```
+
+3. **`HyperParams`**
+
+    以上设置均在`main.py`以及`config.py`文件中有详细说明，遇到问题请自行检索或通过`issue/email`给作者留言
 
 ### :zap: 其他设置
 
@@ -120,8 +135,8 @@
 
 ```python
 # Python3.8
-# quick——get Subscribe API
-import requests
+# quickGet API
+import requestsS
 
 subs_target = 'https://t.qinse.top/subscribe/{}.txt'
 
@@ -140,25 +155,30 @@ print("subs_ssr: {}\nsubs_: {}\nsubs_v2ray: {}\n".format(subs_ssr,subs_trojan,su
 
   ​	首次运行可能会弹出提示
 
-  ![3](https://i.loli.net/2020/10/06/MhwiZfOz3VdDPU5.png)
 
-  ![3](https://i.loli.net/2020/10/06/gmLksO3HCtyWu9r.png)
+
+![MhwiZfOz3VdDPU5](https://i.loli.net/2020/11/25/ImlKL3x68YfHQJi.png)
+
+![2](https://i.loli.net/2020/11/25/nGk1XiaYVc2zAZp.png)
 
 ## :world_map: 开源计划
 
-- [x] 支持`Trojan-go`、`Trojan-gfw`机场的采集
+- [ ] 兼容所有`Subclass`订阅
+    - [x] `Trojan-go`、`Trojan-gfw`
+    - [x] `V2ray`、`ShadowSocksR`
+    - [ ] `Surge 3` 、`Quantumult`、`Kitsunebi`
 - [x] 合并订阅链接消息队列，PC端可查看目前在库的`Subscribe Link`并择一获取
   - [x] 合并队列
   - [x] 查看链接
   - [x] 择一获取
+- [x] 前后端分离，使用Flask包装中间件
 - [ ] 逐渐停用`easygui`前端模块，开发跨平台视图交互模块
 - [ ] 引入`呼吸节拍`中间件，让任务行为拟人化
-- [ ] 兼容所有类型链接的贯通采集
-- [ ] 前后端分离，拓展Flask包装中间件
+- [ ] 加入自下而上的代码自动化生成模块、引入智能识别及数据挖掘生态
 
 ## :email: 联系我们
 
-> 本项目由海南大学机器人与人工智能协会提供维护
+> 本项目由海南大学机器人与人工智能协会数据挖掘小组(`A-RAI.DM`)提供维护
 
 - [**Email**](mailto:RmAlkaid@outlook.com?subject=CampusDailyAutoSign-ISSUE) **||** [**Home**](https://a-rai.github.io/)
 
