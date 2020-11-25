@@ -88,10 +88,10 @@ pip install -r /qinse/V2RaycSpider1125/requirements.txt -i https://pypi.tuna.tsi
 ```
 
 2. **将李芬特装入冰箱**
-    - 全局配置文件：[ **config.py**]([V2RayCloudSpider/config.py at master · QIN2DIM/V2RayCloudSpider (github.com)](https://github.com/QIN2DIM/V2RayCloudSpider/blob/master/V2RaycSpider1125/config.py))
+    - 全局配置文件：[V2RayCloudSpider/config.py at master · QIN2DIM/V2RayCloudSpider (github.com)](https://github.com/QIN2DIM/V2RayCloudSpider/blob/master/V2RaycSpider1125/config.py)
 
 3. **关闭冰箱门**
-    - 程序全局接口：[**main.py**]([V2RayCloudSpider/main.py at master · QIN2DIM/V2RayCloudSpider (github.com)](https://github.com/QIN2DIM/V2RayCloudSpider/blob/master/V2RaycSpider1125/main.py))
+    - 程序全局接口：[V2RayCloudSpider/main.py at master · QIN2DIM/V2RayCloudSpider (github.com)](https://github.com/QIN2DIM/V2RayCloudSpider/blob/master/V2RaycSpider1125/main.py)
 
 ### :balance_scale: 参数设置
 
@@ -117,7 +117,7 @@ else:
 
     - 服务器后台运行
 
-        推荐搭配`tmux`使用，详细教程见[阮一峰网络日志]([Tmux 使用教程 - 阮一峰的网络日志 (ruanyifeng.com)](http://www.ruanyifeng.com/blog/2019/10/tmux.html))
+        推荐搭配`tmux`使用，详见[Tmux 使用教程 - 阮一峰的网络日志 (ruanyifeng.com)](http://www.ruanyifeng.com/blog/2019/10/tmux.html)
 
 ```powershell
 # CentOS7 部署
