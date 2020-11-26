@@ -163,7 +163,10 @@ print("subs_ssr: {}\nsubs_: {}\nsubs_v2ray: {}\n".format(subs_ssr,subs_trojan,su
 
 ## :world_map: 开源计划
 
-- [ ] 兼容所有`Subclass`订阅
+- [ ] 为`iOS`用户提供一种基于`捷径指令` + `URL Scheme`  的订阅链接瞬时获取解决方案
+    - [ ] `云彩姬` + `Shadowrocket`
+    - [ ] `云彩姬` + `Quantumult`
+- [ ]  兼容所有`Subclass`订阅
     - [x] `Trojan-go`、`Trojan-gfw`
     - [x] `V2ray`、`ShadowSocksR`
     - [ ] `Surge 3` 、`Quantumult`、`Kitsunebi`
@@ -171,10 +174,10 @@ print("subs_ssr: {}\nsubs_: {}\nsubs_v2ray: {}\n".format(subs_ssr,subs_trojan,su
   - [x] 合并队列
   - [x] 查看链接
   - [x] 择一获取
-- [x] 前后端分离，使用Flask包装中间件
-- [ ] 逐渐停用`easygui`前端模块，开发跨平台视图交互模块
-- [ ] 引入`呼吸节拍`中间件，让任务行为拟人化
-- [ ] 加入自下而上的代码自动化生成模块、引入智能识别及数据挖掘生态
+- [ ] 前后端分离，使用Flask包装中间件
+    - [ ] 逐渐停用`easygui`前端模块，开发跨平台视图交互模块
+    - [ ] 引入`呼吸节拍`中间件，让任务行为拟人化
+    - [ ] 加入自下而上的代码自动化生成模块、引入智能识别及数据挖掘生态
 
 ## :email: 联系我们
 
